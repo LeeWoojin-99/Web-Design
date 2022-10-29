@@ -110,15 +110,15 @@ body{
     padding-top: 10px;
     background: var(--white);
 }
-#main.off{
-    width: calc(100% - 100px);
+#main.active{
+    width: calc(100% - 80px);
     transform: translateX(-220px);
 }
-#navigation ul li.hovered.off a::after{
-    transform: translateX(-200px);
+#navigation.active ul li.hovered a::after{
+    transform: translateX(-220px);
 }
-#navigation ul li.hovered.off a::before{
-    transform: translateX(-200px);
+#navigation.active ul li.hovered a::before{
+    transform: translateX(-220px);
 }
 
 /* topbar */

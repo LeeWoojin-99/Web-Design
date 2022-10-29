@@ -5,11 +5,10 @@ function activeLink(){
 }
 list.forEach(i => i.addEventListener("mouseover", activeLink));
 
-var menu = document.querySelectorAll(".toggle");
-var curve = document.querySelectorAll("#navigation ul li.hovered");
-var main = document.querySelectorAll("#main");
-function toggleMenu(){
-    main.forEach(i => i.classList.toggle("off"));
-    curve.forEach(i => i.classList.toggle("off"));
+var menu = document.querySelector(".toggle");
+var navigation = document.querySelector("#navigation");
+var main = document.querySelector("#main");
+menu.onclick = function(){
+    navigation.classList.toggle("active");
+    main.classList.toggle("active");
 }
-menu.forEach(i => i.addEventListener("click", toggleMenu));
