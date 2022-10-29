@@ -19,6 +19,7 @@ li{
     --gray: #f5f5f5;
     --black1: #222;
     --black2: #999;
+    --test: #ddd;
 }
 body{
     overflow-x: hidden;
@@ -62,6 +63,7 @@ body{
 .title{
     font-size: 18px;
     line-height: 60px;
+    margin-left: 10px;
 }
 
 /* hover effect */
@@ -81,6 +83,7 @@ body{
     /* background: var(--white); */
     border-radius: 50%;
     box-shadow: 35px 35px 0 10px var(--white);
+    transition: all 0.4s linear;
 }
 #navigation ul li.hovered a::after{
     content: "";
@@ -92,16 +95,30 @@ body{
     /* background: var(--white); */
     border-radius: 50%;
     box-shadow: 35px -35px 0 10px var(--white);
+    transition: all 0.4s linear;
 }
 
 /* main */
 #main{
     position: absolute;
     width: calc(100% - 300px);
+    height: 100vh;
     left: 300px;
-    transition: all 0.5s linear;
-    padding: 0 30px;
+    transition: all 0.4s linear;
+    padding-left: 20px;
+    padding-right: 30px;
     padding-top: 10px;
+    background: var(--white);
+}
+#main.off{
+    width: calc(100% - 100px);
+    transform: translateX(-220px);
+}
+#navigation ul li.hovered.off a::after{
+    transform: translateX(-200px);
+}
+#navigation ul li.hovered.off a::before{
+    transform: translateX(-200px);
 }
 
 /* topbar */
@@ -110,7 +127,7 @@ body{
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
 }
 #main #topbar .toggle{
     display: flex;
@@ -119,40 +136,40 @@ body{
     width: 50px;
     height: 50px;
     font-size: 2.5em;
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
 }
 #main #topbar .toggle ion-icon{
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
 }
+/* 검색창 */
 #main #topbar .search{
     position: relative;
-    width: 300px;
+    width: 400px;
+    margin: 0 10px;
+}
+#main #topbar .search label{
+    position: relative;
+    width: 100%;
+}
+#main #topbar .search label input{
+    width: 100%;
     height: 40px;
-    padding-left: 10px;
-    border: 1px solid var(--black2);
     border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
     background-color: var(--white);
 }
-#main #topbar .search .icon{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 57px;
+#main #topbar .search label ion-icon{
+    position: absolute;
+    top: -2px;
+    left: 10px;
+    font-size: 1.3em;
 }
-#main #topbar .search .icon ion-icon{
-    font-size: 1.8em;
-    /* border: 1px solid black; */
-}
-#main #topbar .search input{
-    position: relative;
-    top: -8px;
-    width: 200px;
-    height: 40px;
-    border: 0px;
-    font-size: 20px;
-    background: rgba(0, 0, 0, 0);
-}
+/* 유저 */
 #main #topbar .user{
     width: 60px;
     height: 60px;
